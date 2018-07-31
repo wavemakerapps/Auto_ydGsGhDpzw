@@ -1,0 +1,82 @@
+{
+  "basePath" : "${rest.googleservice.basepath}",
+  "paths" : {
+    "/api/directions/xml" : {
+      "x-WM-BASE_PATH" : "/api/directions/xml",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/xml" ],
+        "operationId" : "googleservice_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "origin",
+          "format" : "string",
+          "description" : "origin",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "destination",
+          "format" : "string",
+          "description" : "destination",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "sensor",
+          "format" : "string",
+          "description" : "sensor",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.googleservice.scheme}://${rest.googleservice.host}${rest.googleservice.basepath}/api/directions/xml"
+    }
+  },
+  "host" : "${rest.googleservice.host}",
+  "schemes" : [ "${rest.googleservice.scheme}" ],
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleservice.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "error_message", "status" ],
+      "properties" : {
+        "error_message" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "1bcd5973-5f65-4aea-b82b-415d4a3f5509",
+    "x-WM-SERVICE_ID" : "googleapis",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}
